@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "prettier": "^3.3.2",
+    "stylelint": "^16.6.1"
+  },
+  "name": "zakrivayuschiy-teg-f",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "check": "prettier --check './**/*.{html,css,js}'",
+    "format": "prettier --write './**/*.{html,css,js}'",
+    "check:css": "stylelint '**/*.css'",
+    "fix:css": "stylelint '**/*.css' --fix"
+    },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

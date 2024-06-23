@@ -1,1 +1,40 @@
-/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */ /* Исходные значения переменных */
+:root {
+  /* Типографика */
+  --padding-block-start-page: 100px; /* Верхний или левый отступ */
+  --padding-block-end-page: 103px; /* Нижний или правый отступ */
+
+  --header-adaptive: clamp(7.5rem, 7.1479rem + 1.5023vw, 8.5rem);
+  --header__title-adaptive: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  --header__caption-adaptive: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  --dialog__title-adaptive: clamp(
+    21.3125rem,
+    21.0484rem + 1.1268vw,
+    22.0625rem
+  );
+
+  --font-accent: PressStart2P-Regular; /* Акцентный шрифт */
+  --font-body: Inter-Variable; /* Основной шрифт */
+
+  --font-weight-title: 700; /* Вес шрифта для заголовков */
+  --font-weight-body: 400; /* Вес шрифта для основного текста */
+
+  /* Цвета */
+  --bg-color: rgba(255, 255, 255, 1); /* Цвет фона */
+  --accent-color: rgba(0, 0, 0, 1); /* Акцентный цвет */
+  --icon-color: rgba(255, 0, 0, 1); /* Цвет иконок */
+
+  --bg-gradient: repeating-linear-gradient(
+      to right,
+      rgba(211, 211, 211, 1) 0px 2px,
+      transparent 2px 4px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      rgba(211, 211, 211, 1) 0px 2px,
+      transparent 2px 4px
+    ),
+    linear-gradient(to bottom, rgba(231, 231, 231, 0.01), rgba(26, 26, 26, 1)); /* Градиент фона */
+
+  --filter-effect: saturate(1.5) hue-rotate(-50deg); /* Фильтр */
+}

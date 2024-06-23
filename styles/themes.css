@@ -4,3 +4,67 @@
 ✦ theme-light — класс светлой темы
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
+/* Определение переменных для светлой темы */
+:root.theme-light {
+  --font-weight-title: 700; /* Вес шрифта для заголовков */
+  --font-weight-body: 400; /* Вес шрифта для основного текста */
+
+  --bg-color: rgba(255, 255, 255, 1); /* Цвет фона */
+  --accent-color: rgba(0, 0, 0, 1); /* Акцентный цвет */
+
+  --btn-hover-color: var(--bg-color); /* Цвет кнопки при наведении */
+
+  --bg-gradient: repeating-linear-gradient(
+      to right,
+      #d3d3d3 0px 2px,
+      transparent 2px 4px
+    ),
+    repeating-linear-gradient(to bottom, #d3d3d3 0px 2px, transparent 2px 4px),
+    linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a); /* Градиент фона */
+
+  --filter-effect: saturate(1.5) hue-rotate(-50deg); /* Фильтр */
+}
+
+/* Определение переменных для тёмной темы */
+:root.theme-dark {
+  --font-weight-title: 785; /* Вес шрифта для заголовков */
+  --font-weight-body: 465; /* Вес шрифта для основного текста */
+
+  --bg-color: rgba(0, 0, 0, 1); /* Цвет фона */
+  --accent-color: rgba(0, 204, 20, 1); /* Акцентный цвет */
+
+  --btn-hover-color: var(--accent-color); /* Цвет кнопки при наведении */
+
+  --bg-gradient: repeating-linear-gradient(
+      to right,
+      #000 0px 2px,
+      transparent 2px 4px
+    ),
+    repeating-linear-gradient(to bottom, #000 0px 2px, transparent 2px 4px),
+    linear-gradient(to bottom, #007f0c 0.01%, #004306); /* Градиент фона */
+
+  --filter-effect: saturate(1.5) hue-rotate(150deg); /* Фильтр */
+}
+
+/* Стили для изменения темы через медиа-запрос пользовательских предпочтений */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --font-weight-title: 785; /* Вес шрифта для заголовков */
+    --font-weight-body: 465; /* Вес шрифта для основного текста */
+
+    --bg-color: rgba(0, 0, 0, 1); /* Цвет фона */
+    --accent-color: rgba(0, 204, 20, 1); /* Акцентный цвет */
+
+    --btn-hover-color: var(--accent-color); /* Цвет кнопки при наведении */
+
+    --bg-gradient: repeating-linear-gradient(
+        to right,
+        #000 0px 2px,
+        transparent 2px 4px
+      ),
+      repeating-linear-gradient(to bottom, #000 0px 2px, transparent 2px 4px),
+      linear-gradient(to bottom, #007f0c 0.01%, #004306); /* Градиент фона */
+
+    --filter-effect: saturate(1.5) hue-rotate(150deg); /* Фильтр */
+  }
+}

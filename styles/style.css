@@ -174,13 +174,13 @@
   display: flex;
   flex-direction: column;
   gap: 52px;
-  margin-bottom: 50px;
+  margin-bottom: 52px;
 }
 
 .cards__list {
   display: flex;
   flex-direction: column;
-  gap: 52px;
+  gap: 51.5px;
 }
 
 .card {
@@ -237,7 +237,7 @@
 .card__interaction-field {
   height: 39px;
   display: flex;
-  gap: 4px;
+  gap: 4.5px;
   justify-content: flex-end;
 }
 

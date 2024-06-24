@@ -42,7 +42,6 @@
   font-variation-settings: "wght" var(--font-weight-body);
   font-family: var(--font-body), sans-serif;
   /* "wght": Это сокращение от "weight" (вес) и указывает на особенность шрифта, отвечающую за толщину символов. В CSS переменной --font-weight-body ожидается значение, которое будет использоваться для этой особенности. */
-
   color: var(--accent-color);
   background-color: var(--bg-color);
   background-image: var(--bg-gradient);
@@ -126,11 +125,11 @@
   position: absolute;
   width: 100%;
   height: 2px;
+  top: 100%;
+  margin-top: 1px;
   transform: scaleX(0);
   transform-origin: left;
   background-color: currentColor;
-  top: 100%;
-  margin-top: 1px;
   transition: transform 0.3s ease;
   /* для анимации полоски при фокусе*/
 }
@@ -141,12 +140,12 @@
 }
 
 .theme-menu__button::before {
+  color: transparent;
   right: 100%;
   margin-inline-end: 4px;
   top: 0;
   position: absolute;
   content: "▶";
-  color: transparent;
   pointer-events: none;
 }
 
@@ -235,12 +234,6 @@
   object-fit: cover;
 }
 
-.card__description {
-  display: flex;
-  flex-direction: column;
-  gap: 27px;
-}
-
 .card__interaction-field {
   height: 39px;
   display: flex;
@@ -254,6 +247,12 @@
   flex-direction: column;
   gap: 25px;
   padding: 25px;
+}
+
+.card__description {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
 }
 
 .card__parapgraph {
@@ -316,8 +315,8 @@
   display: flex;
   gap: 8px;
   align-items: center;
-  padding-block: 15px;
-  padding-inline: 19px 21px;
+  padding-block: 15px; /* аналог padding-top и padding-bottom */
+  padding-inline: 19px 21px; /* аналог padding-left и padding-right */
   align-self: center;
 }
 

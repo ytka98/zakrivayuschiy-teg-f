@@ -22,6 +22,10 @@
     flex-direction: column;
   }
 
+  .card__watermark {
+    transform: translateX(15px);
+  }
+
   .button__inner-icon {
     width: 28px;
     height: 28px;
@@ -54,16 +58,6 @@
 }
 
 /* HEADER */
-.header__title {
-  text-align: center;
-  text-transform: uppercase;
-  font-size: var(--header__title-adaptive);
-  line-height: 1;
-  font-family: var(--font-accent), fantasy;
-  margin-block-end: 25px;
-  /* Отступ снизу Аналог margin-bottom: 25px */
-}
-
 .header {
   display: flex;
   flex-direction: column;
@@ -76,10 +70,24 @@
   padding-block-end: 25px;
 }
 
+.header__title {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: var(--header__title-adaptive);
+  line-height: 1;
+  font-family: var(--font-accent), fantasy;
+  margin-block-end: 20px;
+  /* Отступ снизу Аналог margin-bottom: 25px */
+}
+
 .header__caption {
   display: block;
-  margin-top: 20px;
+  margin-top: 0; /* Измените или удалите этот отступ */
+  margin-bottom: 25px; /* Чтобы сохранить предыдущий отступ */
+  text-align: center; /* Добавьте выравнивание по центру */
+  text-transform: uppercase; /* Добавьте верхний регистр */
   font-size: var(--header__caption-adaptive);
+  font-family: var(--font-accent), fantasy;
 }
 
 /* Меню темы */
@@ -163,7 +171,7 @@
 /* СТИЛИ ДЛЯ КАРТОЧЕК */
 @supports ((text-stroke: 1px #000000) or (-webkit-text-stroke: 1px #000000)) {
   /* Поддержка для текстового обвода */
-  .card__caption {
+  .card__watermark {
     -webkit-text-stroke: 1px var(--bg-color); /* использование текстового обвода с переменной цвета фона */
     text-stroke: 1px var(--bg-color); /* также установка текстового обвода с переменной цвета фона */
     text-shadow: none; /* убираем тень у текста */
@@ -208,6 +216,7 @@
 
 .card__watermark {
   z-index: 1;
+  text-transform: uppercase;
   position: absolute;
   right: 25px;
   top: 25px;
@@ -305,7 +314,7 @@
   transform: scaleX(1);
 }
 
-.footer {
+.section__save {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -343,6 +352,11 @@
   padding: 30px;
 }
 
+/* Стили для диалогового окна, когда оно открыто */
+.dialog[open] {
+  display: block;
+}
+
 .dialog::backdrop {
   background-color: rgb(0 0 0 / 0.75);
 }
@@ -368,6 +382,9 @@
 .dialog__button {
   width: 100%;
   height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ФИЛЬТРЫ */

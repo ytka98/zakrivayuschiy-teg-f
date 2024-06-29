@@ -376,7 +376,9 @@
 }
 
 .dialog__icon {
-  min-width: 39px;
+  width: 39px;
+  height: 39px;
+  flex: none;
 }
 
 .dialog__button {

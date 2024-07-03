@@ -16,11 +16,12 @@
   --font-accent: PressStart2P-Regular; /* Акцентный шрифт */
   --font-body: Inter-Variable; /* Основной шрифт */
 
-  --font-weight-title: 700; /* Вес шрифта для заголовков */
+  --font-weight-title: 700; /* Вес шрифта для заголовк */
   --font-weight-body: 400; /* Вес шрифта для основного текста */
 
   /* Цвета */
   --bg-color: rgba(255, 255, 255, 1); /* Цвет фона */
+  --btn-hover-color: var(--bg-color); /* Цвет кнопки при наведении */
   --accent-color: rgba(0, 0, 0, 1); /* Акцентный цвет */
   --icon-color: rgba(255, 0, 0, 1); /* Цвет иконок */
 

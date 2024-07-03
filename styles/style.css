@@ -80,6 +80,10 @@
   /* Отступ снизу Аналог margin-bottom: 25px */
 }
 
+.header__title:focus {
+  outline: none;
+}
+
 .header__caption {
   display: block;
   margin-top: 0; /* Измените или удалите этот отступ */
@@ -168,16 +172,6 @@
   pointer-events: none; /* События указателя мыши на элементе отключены */
 }
 
-/* СТИЛИ ДЛЯ КАРТОЧЕК */
-@supports ((text-stroke: 1px #000000) or (-webkit-text-stroke: 1px #000000)) {
-  /* Поддержка для текстового обвода */
-  .card__watermark {
-    -webkit-text-stroke: 1px var(--bg-color); /* использование текстового обвода с переменной цвета фона */
-    text-stroke: 1px var(--bg-color); /* также установка текстового обвода с переменной цвета фона */
-    text-shadow: none; /* убираем тень у текста */
-  }
-}
-
 .cards {
   display: flex;
   flex-direction: column;
@@ -212,25 +206,6 @@
 
 .card__image-group {
   position: relative;
-}
-
-.card__watermark {
-  z-index: 1;
-  text-transform: uppercase;
-  position: absolute;
-  right: 25px;
-  top: 25px;
-  font-size: 14px;
-  line-height: 14px;
-  font-family: var(--font-accent), fantasy;
-  color: var(--accent-color);
-  mix-blend-mode: hard-light;
-  opacity: 0.5;
-  text-shadow:
-    -1px 0px var(--bg-color),
-    0px 1px var(--bg-color),
-    1px 0px var(--bg-color),
-    0px -1px var(--bg-color);
 }
 
 .card__image {
@@ -348,13 +323,20 @@
 .dialog {
   background-color: var(--bg-color);
   border: 2px solid var(--accent-color);
-  max-width: var(--dialog__title-adaptive);
+  max-width: 353px;
   padding: 30px;
 }
 
 /* Стили для диалогового окна, когда оно открыто */
 .dialog[open] {
   display: block;
+}
+
+@media (width <= 696px) {
+  .dialog {
+    padding: 30px 40px;
+    max-width: 341px;
+  }
 }
 
 .dialog::backdrop {
@@ -366,6 +348,7 @@
   margin-bottom: 30px;
   gap: 20px;
   color: var(--accent-color);
+  align-items: center;
 }
 
 .dialog__title {
@@ -387,6 +370,35 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* СТИЛИ ДЛЯ КАРТОЧЕК */
+@supports ((text-stroke: 1px #000000) or (-webkit-text-stroke: 1px #000000)) {
+  /* Поддержка для текстового обвода */
+  .card__watermark {
+    -webkit-text-stroke: 1px var(--bg-color); /* использование текстового обвода с переменной цвета фона */
+    text-stroke: 1px var(--bg-color); /* также установка текстового обвода с переменной цвета фона */
+    text-shadow: none; /* убираем тень у текста */
+  }
+}
+
+.card__watermark {
+  z-index: 1;
+  text-transform: uppercase;
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  font-size: 14px;
+  line-height: 14px;
+  font-family: var(--font-accent), fantasy;
+  color: var(--accent-color);
+  mix-blend-mode: hard-light;
+  opacity: 0.5;
+  text-shadow:
+    -1px 0px var(--bg-color),
+    0px 1px var(--bg-color),
+    1px 0px var(--bg-color),
+    0px -1px var(--bg-color);
 }
 
 /* ФИЛЬТРЫ */

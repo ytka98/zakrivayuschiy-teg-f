@@ -372,15 +372,7 @@
   justify-content: center;
 }
 
-/* СТИЛИ ДЛЯ КАРТОЧЕК */
-@supports ((text-stroke: 1px #000000) or (-webkit-text-stroke: 1px #000000)) {
-  /* Поддержка для текстового обвода */
-  .card__watermark {
-    -webkit-text-stroke: 1px var(--bg-color); /* использование текстового обвода с переменной цвета фона */
-    text-stroke: 1px var(--bg-color); /* также установка текстового обвода с переменной цвета фона */
-    text-shadow: none; /* убираем тень у текста */
-  }
-}
+/* Хаз сказал что вот так правильно. Теперь директива должна работать корректно */
 
 .card__watermark {
   z-index: 1;
@@ -399,6 +391,16 @@
     0px 1px var(--bg-color),
     1px 0px var(--bg-color),
     0px -1px var(--bg-color);
+}
+
+/* СТИЛИ ДЛЯ КАРТОЧЕК */
+@supports ((text-stroke: 1px #000000) or (-webkit-text-stroke: 1px #000000)) {
+  /* Поддержка для текстового обвода */
+  .card__watermark {
+    -webkit-text-stroke: 1px var(--bg-color); /* использование текстового обвода с переменной цвета фона */
+    text-stroke: 1px var(--bg-color); /* также установка текстового обвода с переменной цвета фона */
+    text-shadow: none; /* убираем тень у текста */
+  }
 }
 
 /* ФИЛЬТРЫ */

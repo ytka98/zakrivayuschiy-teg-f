@@ -1,1 +1,1 @@
-https://github.com/ytka98/zakrivayuschiy-teg-f
+# Яндекс Практикум, проектная работа "Закрывающий тег"
